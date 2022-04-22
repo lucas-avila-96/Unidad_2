@@ -6,11 +6,12 @@ class ViajeroFrecuente:
     __apellido = ''
     __millas_acum = 0
 
-    def __init__(self, num, dni, nombre, apellido):
+    def __init__(self, num, dni, nombre, apellido, millas):
         self.__num = num
         self.__dni = dni
         self.__nombre = nombre
         self.__apellido = apellido
+        self.__millas_acum = millas
 
     def getNumero(self):
         return self.__num
@@ -23,9 +24,9 @@ class ViajeroFrecuente:
         return self.__millas_acum
     
     def canjearMillas(self, millas_a_canjear):
-        if(millas_a_canjear <= self.__millas_acum):
+        if millas_a_canjear <= self.__millas_acum:
             self.__millas_acum -= millas_a_canjear
+            print('millas canjeadas')
             return self.__millas_acum
         else:
             print(f'Error, no se pudo realizar el canje')
-
