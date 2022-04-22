@@ -14,9 +14,9 @@ def menu(viajero):
         case 1:
             print(f'Cantidad de millas: {viajero.cantidadTotalMillas()}')
         case 2:
-            print(f'Cantidad de millas: {viajero.acumularMillas()}')
+            print(f'Acumular millas de millas: {viajero.acumularMillas()}')
         case 3:
-            print(f'Cantidad de millas: {viajero.canjearMillas()}')
+            print(f'Canjear millas: {viajero.canjearMillas()}')
         case _:
             print('opcion incorrecta')
 
@@ -25,24 +25,24 @@ if __name__ == '__main__':
     listaViajeros = []
     archivo = open('viajeros.csv')
     reader = csv.reader(archivo, delimiter = ';')
-    next(archivo, None)
+    next(reader)
 
     for linea in reader:
-        listaViajeros.append(ViajeroFrecuente(linea[0], linea[1], linea[2], linea[3],))
+        num = linea[0]
+        dni = linea[1]
+        nombre = linea[2]
+        apellido = linea[3]
+        millas = linea[4]
+        listaViajeros.append(ViajeroFrecuente(num, dni, nombre, apellido, millas))
     
     print('Ingrese numero de viajero: ')
     num = int(input('Numero: '))
     i = 0
 
-    while i <  len(listaViajeros):
-        if int(listaViajeros[i].getNumero()) == num:
-            break
-        else:
+    while i <  len(listaViajeros) and int(listaViajeros[i].getNumero()) != num:
             i += 1
     
     if i < len(listaViajeros):
         menu(listaViajeros[i])
     else:
         print('No se encontro el numero')
-        
-    
