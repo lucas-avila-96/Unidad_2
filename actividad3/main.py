@@ -1,14 +1,31 @@
+import csv
 from ClaseRegistro import Registro
 
-def calcular_mayor(lista):
-    for dia in lista:
-        for hora in dia:
-            print(f'{hora.get_temperatura}')
-            print(f'{hora.get_humedad}')
-            print(f'{hora.get_presion}')
 
 
-def menu():
+def mostrar_mayor(lista):
+    max_t = 0
+    for i in range(len(lista)):
+        for j in range(len(lista[i])):
+            lista[i][j].get_temperatura()
+            
+
+
+def temp_prom_hora(lista):
+    suma = 0
+    for i in range(len(lista)):
+        for j in range(len(lista[i])):
+            suma += int(lista[i][j].get_temperatura())
+        prom = suma/dias
+        print(f'Hora: {i} Pomedio: {prom}')
+
+def listar_variables(lista):
+    print('Ingrese dia para listar')
+    dia = int(input('Dia: '))
+    for i in range(len(lista)):
+        print(lista[i][dia - 1])
+
+def menu(lista):
 
     print('Elija una opcion:')
     print('1 - Mostrar para cada variable el día y hora de menor y mayor valor. ')
@@ -19,22 +36,34 @@ def menu():
 
     match opcion:
         case 1:
-            print('')
+            mostrar_mayor(lista)
+            mostrar_menor(lista)
         case 2:
-            print('')
+            temp_prom_hora(lista)
         case 3:
-            print('')
+            listar_variables(lista)
         case _:
             print('opcion incorrecta')
 
 
 if __name__ == '__main__':
-    lista = [[],[]]
+    dias = 30
+    horas = 24
+    lista = []
+    for i in range(horas):
+        lista.append([0] * dias)
+    print(lista)
 
-    for i in range(lista):
-        for j in range(lista[i]):
-            lista[i][j].append()
+    archivo = open('enero.csv')
+    reader = csv.reader(archivo, delimiter = ';')
+    for linea in reader:
+        dia = int(linea[0])
+        hora = int(linea[1])
+        temp = linea[2]
+        humedad = linea[3]
+        presion = linea[4]
+        lista[hora][dia - 1] = Registro(temp, humedad, presion)
 
-    calcular_mayor(lista)
-
-    menu()
+    menu(lista)
+    archivo.close()
+    
