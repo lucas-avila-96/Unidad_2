@@ -3,13 +3,6 @@ from ClaseRegistro import Registro
 
 
 
-def mostrar_mayor(lista):
-    max_t = 0
-    for i in range(len(lista)):
-        for j in range(len(lista[i])):
-            lista[i][j].get_temperatura()
-            
-
 
 def temp_prom_hora(lista):
     suma = 0
@@ -36,8 +29,7 @@ def menu(lista):
 
     match opcion:
         case 1:
-            mostrar_mayor(lista)
-            mostrar_menor(lista)
+            pass
         case 2:
             temp_prom_hora(lista)
         case 3:
