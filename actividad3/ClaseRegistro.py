@@ -9,13 +9,13 @@ class Registro:
         self.__presion = presion
 
     def get_temperatura(self):
-        return self.__temperatura
+        return int(self.__temperatura)
     
     def get_humedad(self):
-        return self.__humedad
+        return int(self.__humedad)
     
     def get_presion(self):
-        return self.__presion
+        return int(self.__presion)
 
     def __str__(self):
         return(f'T:{self.__temperatura} H:{self.__humedad} P:{self.__presion}')
