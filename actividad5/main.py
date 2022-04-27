@@ -1,5 +1,4 @@
 from ClaseMenu import Menu
-from CLasePlanAhorro import PlanAhorro
 from ClaseManejador import ManejadorPlanes
 
 if __name__ == '__main__':
