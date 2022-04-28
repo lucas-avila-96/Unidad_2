@@ -1,5 +1,4 @@
 import csv
-from json.encoder import INFINITY
 from ClaseRegistro import Registro
 
 def mostrar_mayorTemp(lista):
@@ -10,7 +9,7 @@ def mostrar_mayorTemp(lista):
                 max_t = lista[i][j].get_temperatura() 
                 hora = i
                 dia = j
-    return(hora,dia)
+    print(f"Dia:{dia+1}\t Hora:{hora}")
 
 def mostrar_menorTemp(lista):
     min_t= 1000
@@ -20,7 +19,7 @@ def mostrar_menorTemp(lista):
                 min_t = lista[i][j].get_temperatura() 
                 hora = i
                 dia = j
-    print(f"Hora:{hora}\n Dia:{dia}")
+    print(f"Dia:{dia+1}\t Hora:{hora}")
 
 def mostrar_mayorPres(lista):
     max_p = -1
@@ -30,7 +29,7 @@ def mostrar_mayorPres(lista):
                 max_p = lista[i][j].get_presion() 
                 hora = i
                 dia = j
-    print(f"Dia:{dia}\t Hora:{hora}")
+    print(f"Dia:{dia+1}\t Hora:{hora}")
 
 def mostrar_menorPres(lista):
     min_p= 10000
@@ -40,7 +39,7 @@ def mostrar_menorPres(lista):
                 min_p= lista[i][j].get_presion() 
                 hora = i
                 dia = j
-    print(f"Dia:{dia}\t Hora:{hora}")
+    print(f"Dia:{dia+1}\t Hora:{hora}")
 
 def mostrar_mayorHum(lista):
     max_h = -1
@@ -50,25 +49,26 @@ def mostrar_mayorHum(lista):
                 max_h = lista[i][j].get_humedad() 
                 hora = i
                 dia = j
-    print(f"Dia:{dia}\t Hora:{hora}")
+    print(f"Dia:{dia+1}\t Hora:{hora}")
 
 def mostrar_menorHum(lista):
-    min_h = -1
+    min_h = 10000
     for i in range(len(lista)):
         for j in range(len(lista[i])):
             if lista[i][j].get_humedad() < min_h:
                 min_h = lista[i][j].get_humedad() 
                 hora = i
                 dia = j
-    print(f"Dia:{dia}\t Hora:{hora}")
+    print(f"Dia:{dia+1}\t Hora:{hora}")
 
 def temp_prom_hora(lista):
+    print("___TEMPERATURA PROMEDIO___")
     for i in range(len(lista)):
         suma = 0
         for j in range(len(lista[i])):
             suma += int(lista[i][j].get_temperatura())
         prom = suma/dias
-    print(f"Dia:{dia}\t Hora:{hora}")
+        print(f"Hora:{i}\t Promedio:{prom}")
 
 def listar_variables(lista):
     print('Ingrese dia para listar')

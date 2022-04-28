@@ -26,8 +26,7 @@ class ViajeroFrecuente:
         return self.__millas_acum
     
     def __gt__(self, otro):
-        if self.__millas_acum > otro.__millas_acum :
-            return True
+        return (self.__millas_acum > otro.__millas_acum)
 
     def __add__(self, otro):
         return ViajeroFrecuente(self.__num, self.__dni, self.__nombre, self.__apellido,
@@ -36,14 +35,14 @@ class ViajeroFrecuente:
     __radd__ = __add__
 
     def __sub__(self, otro):
+        total = self.__millas_acum
         if self.__millas_acum >= otro:
-            print(f'Canjeaste {otro} millas')
-            return ViajeroFrecuente(self.__num, self.__dni, self.__nombre, self.__apellido,
-                self.__millas_acum - otro)
-        else: print('No se realizo el canje. Millas insuficientes')
-
+            total = self.__millas_acum - otro
+        return ViajeroFrecuente(self.__num, self.__dni, self.__nombre, self.__apellido, total)
+        
     __rsub__ = __sub__
 
     def __eq__(self, otro):
         return self.__millas_acum == otro
+
     __req__ = __eq__

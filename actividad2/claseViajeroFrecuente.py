@@ -1,4 +1,5 @@
 
+
 class ViajeroFrecuente:
     __num = 0
     __dni = ''
@@ -17,16 +18,18 @@ class ViajeroFrecuente:
         return self.__num
 
     def cantidadTotalMillas(self):
-        return (self.__millas_acum)
+        print(f'Cantidad de millas: {self.__millas_acum}')
     
-    def acumularMillas(self, millas_recorridas):
-        self.__millas_acum += millas_recorridas
-        return self.__millas_acum
+    def acumularMillas(self):
+        print('Ingresar millas a acumular')
+        millas = input('millas: ')
+        self.__millas_acum += millas
     
-    def canjearMillas(self, millas_a_canjear):
+    def canjearMillas(self):
+        print('Ingresar millas a canjear')
+        millas_a_canjear = input('Millas: ')
         if millas_a_canjear <= self.__millas_acum:
             self.__millas_acum -= millas_a_canjear
             print('millas canjeadas')
-            return self.__millas_acum
         else:
             print(f'Error, no se pudo realizar el canje')

@@ -34,6 +34,7 @@ class Ventana:
         if self.__x2 + n <= 500:
             self.__x1 += n
             self.__x2 += n
+            print('ventana modificada')
         else:
             print('error')
     
@@ -41,6 +42,8 @@ class Ventana:
         if self.__x1 - n >= 0 :
             self.__x1 -= n
             self.__x2 -= n
+            print('ventana modificada')
+
         else:
             print('error')
     
@@ -48,6 +51,8 @@ class Ventana:
         if self.__y2 + n <= 500:
             self.__y1 += n
             self.__y2 += n
+            print('ventana modificada')
+
         else:
             print('error')
 
@@ -55,7 +60,7 @@ class Ventana:
         if self.__y1 - n >= 0:
             self.__y1 -= n
             self.__y2 -= n
-
+            print('ventana modificada')
         else:
             print('error')
         

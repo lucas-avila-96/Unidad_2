@@ -12,11 +12,11 @@ def menu(viajero):
     
     match opcion:
         case 1:
-            print(f'Cantidad de millas: {viajero.cantidadTotalMillas()}')
+            viajero.cantidadTotalMillas()
         case 2:
-            print(f'Acumular millas de millas: {viajero.acumularMillas()}')
+            viajero.acumularMillas()
         case 3:
-            print(f'Canjear millas: {viajero.canjearMillas()}')
+            viajero.canjearMillas()
         case _:
             print('opcion incorrecta')
 
