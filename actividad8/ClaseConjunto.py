@@ -1,5 +1,3 @@
-from main import C
-
 
 class Conjunto:
     __lista = []
@@ -7,17 +5,24 @@ class Conjunto:
     def __init__(self, objLista = []):
         self.__lista = objLista
     
+    def __str__(self):
+        return (f'{self.__lista}')
     def __add__(self, otro):
-        union = []
-        for i in range(len(self.__lista)):
-                if(self.__lista[i] <= otro.__lista[i]):
-                    union.append(self.lista[i])
+        result = self.__lista
+        for n in otro.__lista:
+            if not n in result:
+                result.append(n)
+        return Conjunto(result)
 
-        return Conjunto(union)
     def __sub__(self, otro):
-        resta = []
-
-        return Conjunto(resta)
+        result = self.__lista
+        i = 0
+        while i <len(result):
+            if result[i] in otro.__lista:
+                result.pop(i)
+            else:
+                i += 1
+        return Conjunto(result)
 
     def __eq__(self, otro):
-        
+        return self.__lista == otro.__lista

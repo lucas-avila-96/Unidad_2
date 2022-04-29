@@ -3,7 +3,7 @@ from ClaseManejadorMedicamento import ManejadorMedicamento
 
 
 if __name__ == '__main__':
-    manejadorCama = ManejadorCama(1)
+    manejadorCama = ManejadorCama()
     manejadorMedicamento = ManejadorMedicamento()
     manejadorCama.testCamas()
     manejadorMedicamento.testMedicamentos()
