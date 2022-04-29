@@ -10,3 +10,4 @@ if __name__ == '__main__':
     print('---ALTA DE PACIENTE---')
     print('Ingrese nombre y apellido del paciente')
     nomApe = input('Nombre y Apellido: ')
+    #---------falta completar----------
