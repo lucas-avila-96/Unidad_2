@@ -1,8 +1,8 @@
 from claseVentana import Ventana
 
 def test():
-    objPrueba = Ventana('Prueba', 2, 5, 400, 300)
-    print(f'Test: {objPrueba.mostrar()}')
+    objetoPrueba = Ventana('Prueba', 2, 5, 400, 300)
+    print(f'Test: {objetoPrueba.mostrar()}')
 
 if __name__ ==  '__main__':
     test()

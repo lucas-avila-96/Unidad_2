@@ -33,3 +33,6 @@ class ViajeroFrecuente:
             print('millas canjeadas')
         else:
             print(f'Error, no se pudo realizar el canje')
+    
+    def __str__(self):
+        return(f'Nombre y Apellido: {self.__nombre} {self.__apellido}\nDni:{self.__dni}\nMillas: {self.__millas_acum}')

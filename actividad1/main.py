@@ -1,6 +1,9 @@
 from claseEmail import Email
 import csv
 
+def test():
+    objetoPrueba = Email('Lucas', 'gmail', 'com', 'contraseña')
+    print(f'Test: {objetoPrueba.retornaEmail()}')
 
 def cargarDatos():
     print('Ingrese los siguientes datos:')
@@ -15,6 +18,7 @@ def cargarDatos():
 
 
 if __name__ == '__main__':
+    test()
     cuenta1 = cargarDatos()
     cuenta1.updateContraseña()
 

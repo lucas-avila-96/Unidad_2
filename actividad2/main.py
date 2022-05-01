@@ -1,6 +1,10 @@
 import csv
 from claseViajeroFrecuente import ViajeroFrecuente
 
+def test():
+    objetoPrueba = ViajeroFrecuente(1, 1452143214, 'Lucas', 'Avila', 500)
+    print(objetoPrueba)
+
 def menu(viajero):
 
     print('Elija una opcion:')
@@ -22,6 +26,7 @@ def menu(viajero):
 
 
 if __name__ == '__main__':
+    test()
     listaViajeros = []
     archivo = open('viajeros.csv')
     reader = csv.reader(archivo, delimiter = ';')

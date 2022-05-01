@@ -1,6 +1,10 @@
 import csv
 from ClaseRegistro import Registro
 
+def test():
+    objetoPrueba = Registro(35, 100, 1000)
+    print(objetoPrueba)
+
 def mostrar_mayorTemp(lista):
     max_t = -1
     for i in range(len(lista)):
@@ -109,6 +113,7 @@ def menu(lista):
 
 
 if __name__ == '__main__':
+    test()
     dias = 30
     horas = 24
     lista = []
