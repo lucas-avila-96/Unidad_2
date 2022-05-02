@@ -7,15 +7,16 @@ class Conjunto:
     
     def __str__(self):
         return (f'{self.__lista}')
+
     def __add__(self, otro):
-        result = self.__lista
+        result = list(self.__lista)
         for n in otro.__lista:
             if not n in result:
                 result.append(n)
         return Conjunto(result)
 
     def __sub__(self, otro):
-        result = self.__lista
+        result = list(self.__lista)
         i = 0
         while i <len(result):
             if result[i] in otro.__lista:
