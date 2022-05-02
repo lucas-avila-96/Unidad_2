@@ -44,7 +44,6 @@ if __name__ == '__main__':
         millas = linea[4]
         listaViajeros.append(ViajeroFrecuente(num, dni, nombre, apellido, millas))
     
-    mostrarDireccionesMemoria(listaViajeros)
     print('Ingrese numero de viajero: ')
     num = int(input('Numero: '))
     i = 0
@@ -56,3 +55,5 @@ if __name__ == '__main__':
         menu(listaViajeros[i])
     else:
         print('No se encontro el numero')
+
+    mostrarDireccionesMemoria(listaViajeros)
