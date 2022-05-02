@@ -6,7 +6,7 @@ def test():
     print(objetoPrueba)
 
 def mostrarDireccionesMemoria(lista):
-    for i in range(3):
+    for i in range(4):
         print(f'Direccion :{hex(id(lista[i]))} Viajero: {lista[i]}')
 
 def menu(viajero):
@@ -47,8 +47,11 @@ if __name__ == '__main__':
     print('Ingrese numero de viajero: ')
     num = int(input('Numero: '))
     i = 0
-
-    while i <  len(listaViajeros) and int(listaViajeros[i].getNumero()) != num:
+    band = False
+    while i <  len(listaViajeros) and not band:
+        if int(listaViajeros[i].getNumero()) == num:
+            band = True
+        else: 
             i += 1
     
     if i < len(listaViajeros):
