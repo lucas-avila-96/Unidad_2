@@ -19,6 +19,6 @@ class Menu:
     def opcion2(self, mp):
         mp.vehiculoMenorValorCuota()
     def opcion3(self, mp):
-        mp.montoParaLic()
+        mp.montoParaLicitar()
     def opcion4(self, mp):
         mp.modificarCuotas()

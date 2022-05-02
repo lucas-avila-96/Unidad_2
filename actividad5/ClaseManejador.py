@@ -17,10 +17,8 @@ class ManejadorPlanes:
             mod = fila[1]
             ver =  fila[2]
             valor = fila[3]
-            cantCuotasPlan = fila[4]
-            cantCuotasLic = fila[5]
-            unPlan = PlanAhorro(cod,mod,ver,valor, cantCuotasPlan, cantCuotasLic)
-            self.agregar_plan(unPlan)
+            unPlan = PlanAhorro(cod,mod,ver,valor)
+            self.agregarPlan(unPlan)
         archivo.close()
 
     def __str__(self):
@@ -39,17 +37,15 @@ class ManejadorPlanes:
             elemento.actualizarPrecio(nuevoPrecio)
 
     def vehiculoMenorValorCuota(self):
-        valor = input('Ingrese valor: ')
-        vehiculo = None
+        valor = int(input('Ingrese valor: '))
         for elemento in self.__listaPlanes:
-            if(elemento.getPrecioCuota() < valor):
+            if int(elemento.getPrecioCuota()) < valor:
                 elemento.mostrarInfo()
-                vehiculo = elemento
-        return vehiculo
+        
     
     def montoParaLicitar(self):
-        vehiculo = self.vehiculoMenorValorCuota()
-        vehiculo.mostrarMontoParaLicitar()
+        for elemento in self.__listaPlanes:
+            elemento.mostrarMontoParaLicitar()
         
     def modificarCuotas(self):
         PlanAhorro.modificarCuotasLicitar()

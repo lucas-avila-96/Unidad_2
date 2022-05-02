@@ -5,11 +5,12 @@ def test():
     print(objetoPruba)
 
 if __name__ == '__main__':
+
     test()
     A = Conjunto([1, 2, 3, 4])
     B = Conjunto([3, 6, 9])
     C = Conjunto([1, 2, 3])
-    D = Conjunto([1, 2, 3])
+    D = Conjunto([3, 1, 2])
 
     C1 = A + B 
     print(f'{A} + {B} = {C1}')
@@ -19,4 +20,3 @@ if __name__ == '__main__':
 
     esIgual = C == D
     print(esIgual)
-

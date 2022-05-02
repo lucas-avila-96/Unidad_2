@@ -26,4 +26,15 @@ class Conjunto:
         return Conjunto(result)
 
     def __eq__(self, otro):
-        return self.__lista == otro.__lista
+        esIgual = True
+        if len(self.__lista) == len(otro.__lista):
+            i = 0
+            while i < len(self.__lista) and esIgual:
+                if self.__lista[i] in otro.__lista:
+                    i += 1
+                else:
+                    esIgual = False
+        else: esIgual = False
+        return esIgual
+                
+                
