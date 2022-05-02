@@ -13,7 +13,8 @@ class PlanAhorro:
         self.__version = ver
         self.__valorVehiculo = val
         self.__valorCuota = (int(val)/int(self.getCuotasPlan())) + int(val) * 0.10
-
+        
+    @classmethod
     def getCuotasPlan(cls):
         return cls.__cuotasPlan
 

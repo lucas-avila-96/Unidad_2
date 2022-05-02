@@ -8,6 +8,8 @@ if __name__ == '__main__':
     manejadorMedicamento = ManejadorMedicamento()
     manejadorCama.testCamas()
     manejadorMedicamento.testMedicamentos()
+
+    
     print('---ALTA DE PACIENTE---')
     print('Ingrese nombre y apellido del paciente')
     nomAp = input('Nombre y Apellido: ')

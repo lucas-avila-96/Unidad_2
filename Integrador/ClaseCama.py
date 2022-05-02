@@ -10,7 +10,7 @@ class Cama:
     __fecha_inter = ''
     __fecha_alta = ''
     
-    def __init__(self, id, hab, na = None, est = False, diag = '', fi = '', fa = ''):
+    def __init__(self, id, hab, est,na, diag, fi, fa):
         self.__idCama = id
         self.__habitacion = hab
         self.__estado = est

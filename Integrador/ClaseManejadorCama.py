@@ -32,8 +32,8 @@ class ManejadorCama:
             estado = fila[2]
             apellidoNombre = fila[3]
             diagnostico = fila[4]
-            fechaInternacion = fila[4]
-            fechaAlta = fila[4]
+            fechaInternacion = fila[5]
+            fechaAlta = fila[6]
             self.agregarCama(Cama(id, habitacion, estado, apellidoNombre, diagnostico, fechaInternacion, fechaAlta))
             
     def buscarPaciente(self, nombre):
@@ -42,16 +42,20 @@ class ManejadorCama:
         paciente = None
         while i < self.__arregloCamas.size and not band:
             if nombre == self.__arregloCamas[i].getNombre():
+                paciente = self.__arregloCamas[i]
                 band = True
             else:
                 i += 1
-        if i < self.__arregloCamas.size:
-            paciente = self.__arregloCamas[i]
         return paciente
-    
+        
     def buscarPacienteDiagnostico(self, diagnostico):
         pacientes = []
         for i in self.__arregloCamas.size:
             if diagnostico == self.__arregloCamas[i].getDiagnostico():
                 pacientes.append(self.__arregloCamas[i])
         return pacientes
+
+
+    def mostrarPuntos(self):
+        for i in range(self.__cantidad):
+            print(self.__arregloCamas[i])
