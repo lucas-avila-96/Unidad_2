@@ -15,7 +15,10 @@ if __name__ == '__main__':
     nomAp = input('Nombre y Apellido: ')
     
     paciente = manejadorCama.buscarPaciente(nomAp)
-    id = paciente.getIdCama()
+    if paciente == None:
+        print('No se encontro')
+    else:
+        id = paciente.getIdCama()
     medicamentos = manejadorMedicamento.buscarMedicamento(id)
 
     totalAdeudado = 0

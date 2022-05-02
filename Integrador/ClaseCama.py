@@ -1,11 +1,10 @@
 
-from datetime import date
 
 class Cama:
     __idCama = 0
     __habitacion = ''
-    __estado = False
-    __nomAp = None
+    __estado = ''
+    __nomAp = ''
     __diagnostico = ''
     __fecha_inter = ''
     __fecha_alta = ''
