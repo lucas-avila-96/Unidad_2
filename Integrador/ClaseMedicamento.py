@@ -16,3 +16,17 @@ class Medicamento:
         self.__cant_aplicada = ca
         self.__precio = pc
     
+    def getNombre(self):
+        return self.__nombre
+
+    def getMonodroga(self):
+        return self.__monodroga
+    
+    def getPresentacion(self):
+        return self.__presentacion
+    
+    def getCantidad(self):
+        return self.__cant_aplicada
+    
+    def getPrecio(self):
+        return self.__precio

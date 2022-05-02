@@ -8,10 +8,11 @@ class ManejadorCama:
     __dimension = 0
     __incremento = 1
 
-    def __init__(self, dimension, incremento = 1):
+    def __init__(self, dimension = 1, incremento = 1):
         self.__arregloCamas = np.empty(dimension, dtype = Cama)
         self.__cantidad = 0
         self.__dimension = dimension
+        self.__incremento = incremento
 
     def agregarCama(self, unaCama):
         if self.__cantidad == self.__dimension:
@@ -35,3 +36,22 @@ class ManejadorCama:
             fechaAlta = fila[4]
             self.agregarCama(Cama(id, habitacion, estado, apellidoNombre, diagnostico, fechaInternacion, fechaAlta))
             
+    def buscarPaciente(self, nombre):
+        i = 0
+        band = False
+        paciente = None
+        while i < self.__arregloCamas.size and not band:
+            if nombre == self.__arregloCamas[i].getNombre():
+                band = True
+            else:
+                i += 1
+        if i < self.__arregloCamas.size:
+            paciente = self.__arregloCamas[i]
+        return paciente
+    
+    def buscarPacienteDiagnostico(self, diagnostico):
+        pacientes = []
+        for i in self.__arregloCamas.size:
+            if diagnostico == self.__arregloCamas[i].getDiagnostico():
+                pacientes.append(self.__arregloCamas[i])
+        return pacientes
