@@ -5,6 +5,10 @@ def test():
     objetoPrueba = ViajeroFrecuente(1, 1452143214, 'Lucas', 'Avila', 500)
     print(objetoPrueba)
 
+def mostrarDireccionesMemoria(lista):
+    for i in range(3):
+        print(f'Direccion :{hex(id(lista[i]))} Viajero: {lista[i]}')
+
 def menu(viajero):
 
     print('Elija una opcion:')
@@ -40,6 +44,7 @@ if __name__ == '__main__':
         millas = linea[4]
         listaViajeros.append(ViajeroFrecuente(num, dni, nombre, apellido, millas))
     
+    mostrarDireccionesMemoria(listaViajeros)
     print('Ingrese numero de viajero: ')
     num = int(input('Numero: '))
     i = 0
