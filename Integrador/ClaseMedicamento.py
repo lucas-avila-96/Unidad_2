@@ -16,6 +16,8 @@ class Medicamento:
         self.__cant_aplicada = ca
         self.__precio = pc
     
+    def getIdCama(self):
+        return self.__idCama
     def getNombre(self):
         return self.__nombre
 

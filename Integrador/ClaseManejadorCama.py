@@ -50,12 +50,8 @@ class ManejadorCama:
         
     def buscarPacienteDiagnostico(self, diagnostico):
         pacientes = []
-        for i in self.__arregloCamas.size:
+        for i in range(self.__cantidad):
+            print(self.__arregloCamas[i].getDiagnostico())
             if diagnostico == self.__arregloCamas[i].getDiagnostico():
                 pacientes.append(self.__arregloCamas[i])
         return pacientes
-
-
-    def mostrarPuntos(self):
-        for i in range(self.__cantidad):
-            print(self.__arregloCamas[i])

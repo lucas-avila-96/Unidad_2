@@ -9,7 +9,7 @@ class Cama:
     __fecha_inter = ''
     __fecha_alta = ''
     
-    def __init__(self, id, hab, est,na, diag, fi, fa):
+    def __init__(self, id, hab, est, na, diag, fi, fa):
         self.__idCama = id
         self.__habitacion = hab
         self.__estado = est
@@ -39,10 +39,5 @@ class Cama:
     def getFechaAlta(self):
         return self.__fecha_alta
 
-    def alta(self, fecha):
-        self.__fecha_alta = fecha
-        self.__estado = False
-        self.__nomAp = None
-
     def __str__(self):
-        return(f'{self.__idCama}\t{self.__habitacion}\t{self.__nomAp}\t{self.__estado}\t{self.__diagnostico}\t{self.__fecha_inter}\t{self.__fecha_alta}\t')
+        return(f'ID:{self.__idCama}\nHabitacion: {self.__habitacion}\nNombre: {self.__nomAp}\nEstado: {self.__estado}\n Diagnostico: {self.__diagnostico}\nFecha Internacion: {self.__fecha_inter}\nFecha Alta: {self.__fecha_alta}\t')

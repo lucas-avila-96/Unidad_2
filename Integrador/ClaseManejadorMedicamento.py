@@ -9,7 +9,6 @@ class ManejadorMedicamento:
         self.__listaMedicamentos = []
 
     def agregarMedicamento(self, unMedicamento):
-        
         self.__listaMedicamentos.append(unMedicamento)
 
     def testMedicamentos(self):
@@ -29,7 +28,7 @@ class ManejadorMedicamento:
     
     def buscarMedicamento(self, id):
         medicamentosPaciente = []
-        for i in self.__arregloCamas.size:
-            if id == self.listaMedicamentos[i].getIdCama():
-                medicamentosPaciente.append(self.listaMedicamentos[i])
+        for i in range(len(self.__listaMedicamentos)):
+            if id == self.__listaMedicamentos[i].getIdCama():
+                medicamentosPaciente.append(self.__listaMedicamentos[i])
         return medicamentosPaciente
