@@ -18,6 +18,7 @@ class Medicamento:
     
     def getIdCama(self):
         return self.__idCama
+        
     def getNombre(self):
         return self.__nombre
 

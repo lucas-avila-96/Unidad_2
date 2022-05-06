@@ -23,15 +23,14 @@ if __name__ == '__main__':
         for medicamento in ListaMedicamentos:
             totalAdeudado += int(medicamento.getPrecio())
         
-        print(f'Paciente: {paciente.getNombre()} Cama: {paciente.getIdCama()} Habitación: {paciente.getHabitacion()}')
-        print(f'Diagnóstico: {paciente.getDiagnostico()} Fecha de internación: {paciente.getFechaInternacion()}')
-        print(f'Fecha de Alta: {paciente.getFechaAlta()}')
-        print('Medicamento/monodroga\t Presentacion\t Cantidad\t Precio')
+        print('{}{:<25}{}{:<10}{}{:<10}'.format('Paciente: ', paciente.getNombre(),'Cama:', paciente.getIdCama(),'Habitación: ', paciente.getHabitacion()))
+        print('{}{:<25}{}{:<10}'.format('Diagnóstico:', paciente.getDiagnostico(), 'Fecha de internación:',paciente.getFechaInternacion()))
+        print('{}{:<25}'.format('Fecha de Alta:', paciente.getFechaAlta()))
+        print('{:<30}{:<20}{:<20}{:<20}'.format('Medicamento/monodroga', 'Presentacion', 'Cantidad', 'Precio'))
         
         for medicamento in ListaMedicamentos:
-            print(f'{medicamento.getMonodroga()}\t{medicamento.getPresentacion()}\t{medicamento.getCantidad()}{medicamento.getPrecio()}')
-        
-        print(f'Total adeudado: {totalAdeudado}')
+            print('{:<9}{}{:<20}{:<20}{:<20}{:<20}'.format(medicamento.getNombre(),'/', medicamento.getMonodroga(), medicamento.getPresentacion(), medicamento.getCantidad(), medicamento.getPrecio()))
+        print('{:<30}{:<20}{:<20}{:<20}'.format('Total adeudado:','','', totalAdeudado))
     else:
         print('No se encontro')
 
