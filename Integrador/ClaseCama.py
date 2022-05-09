@@ -17,6 +17,12 @@ class Cama:
         self.__diagnostico = diag
         self.__fecha_inter = fi
         self.__fecha_alta = fa
+    
+    def setFechaAlta(self, fecha):
+        self.__fecha_alta = fecha
+    
+    def setEstado(self):
+        self.__estado = False
 
     def getIdCama(self):
         return self.__idCama

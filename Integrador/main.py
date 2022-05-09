@@ -13,10 +13,12 @@ if __name__ == '__main__':
     print('---ALTA DE PACIENTE---')
     print('Ingrese nombre y apellido del paciente')
     nomAp = input('Nombre y Apellido: ')
-    
     paciente = manejadorCama.buscarPaciente(nomAp)
 
     if paciente != None:
+        fechaAlta = input('Fecha de alta: ')
+        paciente.setFechaAlta(fechaAlta)
+        paciente.setEstado()
         id = paciente.getIdCama()
         ListaMedicamentos = manejadorMedicamento.buscarMedicamento(id)
         totalAdeudado = 0
