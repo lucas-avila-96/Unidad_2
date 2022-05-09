@@ -3,8 +3,8 @@
 class Cama:
     __idCama = 0
     __habitacion = ''
-    __estado = ''
-    __nomAp = ''
+    __estado = False
+    __nomAp = None
     __diagnostico = ''
     __fecha_inter = ''
     __fecha_alta = ''

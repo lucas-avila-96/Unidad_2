@@ -51,7 +51,6 @@ class ManejadorCama:
     def buscarPacienteDiagnostico(self, diagnostico):
         pacientes = []
         for i in range(self.__cantidad):
-            print(self.__arregloCamas[i].getDiagnostico())
-            if diagnostico == self.__arregloCamas[i].getDiagnostico():
+            if diagnostico == self.__arregloCamas[i].getDiagnostico() and bool(self.__arregloCamas[i].getEstado()) == True:
                 pacientes.append(self.__arregloCamas[i])
         return pacientes

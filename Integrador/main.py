@@ -40,8 +40,6 @@ if __name__ == '__main__':
 
     listaPacientes = manejadorCama.buscarPacienteDiagnostico(nombreDiagnostico)
 
-    print(listaPacientes)
-
     if len(listaPacientes) >= 1:
         for objPaciente in listaPacientes:
             print(objPaciente)
